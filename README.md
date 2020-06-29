@@ -10,7 +10,7 @@ composer require speech-synthesis/speech-synthesis
 ```
 $config = [
     'Iflytek'=>[ 
-        'fileRoot'=>'/',
+        'fileRoot'=>'/uploads',// 文件保存的路径
         'app_id' => '5e840bb8',
         'api_secret'=>'0b0f729b9e5302ba69f5b91aba91948f',
         'api_key'=>'09536ff9b5aeb8a4ccb51121b7844092',
