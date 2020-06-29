@@ -30,9 +30,9 @@ class Config
             'algorithm'=>'hmac-sha256',
             'time'=>'',
 
-            'app_id' => '5e840bb8',
-            'api_secret'=>'0b0f729b9e5302ba69f5b91aba91948f',
-            'api_key'=>'09536ff9b5aeb8a4ccb51121b7844092',
+            'app_id' => '***',
+            'api_secret'=>'***',
+            'api_key'=>'***',
             'aue' => 'lame',
             'sfl' => 1,
             'auf' => 'audio/L16;rate=16000',
