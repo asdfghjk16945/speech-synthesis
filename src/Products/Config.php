@@ -25,7 +25,7 @@ class Config
      */
     protected static $config = [
         'Iflytek'=>[
-            'fileRoot'=>'/',
+            'fileRoot'=>'',
             'url'=>'wss://tts-api.xfyun.cn/v2/tts',
             'algorithm'=>'hmac-sha256',
             'time'=>'',
