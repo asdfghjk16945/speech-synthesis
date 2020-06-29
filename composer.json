@@ -1,0 +1,21 @@
+{
+  "name": "speech-synthesis/speech-synthesis",
+  "version": "1.0.0",
+  "description": "The composer plugin for speech-synthesis",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "asdfghjk16945",
+      "email": "849983590@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "SpeechSynthesis\\": "src/"
+    }
+  }
+}
