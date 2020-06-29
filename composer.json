@@ -1,6 +1,5 @@
 {
   "name": "speech-synthesis/speech-synthesis",
-  "version": "1.0.0",
   "description": "The composer plugin for speech-synthesis",
   "minimum-stability": "dev",
   "license": "MIT",
