@@ -6,7 +6,6 @@ namespace SpeechSynthesis;
 
 use SpeechSynthesis\Contracts\AudioSynthesisStrategy;
 use SpeechSynthesis\Products\Config;
-use SpeechSynthesis\Products\Iflytek;
 
 class SynthesisFactory
 {
