@@ -35,7 +35,7 @@ class SynthesisFactory
      */
     public function getSpeechFile():string
     {
-        return $this->synthesisRes['audio_name'];
+        return $this->synthesisRes['data']['audio_name'];
     }
 
     /**
