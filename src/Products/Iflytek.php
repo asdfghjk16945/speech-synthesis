@@ -49,14 +49,20 @@ class Iflytek implements AudioSynthesisStrategy
 
         // 设置文件名
         $ext = $this->config['sfl'] ? '.mp3' : '.pcm';
+        // windows系统需要把中文编码方式改为GBK
+        if(DIRECTORY_SEPARATOR === '\\'){
+            $fileName = iconv('UTF-8','GBK',$fileName);
+        }
         $fileName = $fileName . $ext;
 
         // 完整文件地址
-        $fullFileName = $this->config['fileRoot'] . DIRECTORY_SEPARATOR . $fileName;
+        $fullFileName = $this->config['fileRoot'] ? $this->config['fileRoot'] . DIRECTORY_SEPARATOR . $fileName : $fileName;
 
         // 文件冲突，重新命名一下，后缀加_new
         if(file_exists($fullFileName)){
-            $fullFileName = $this->config['fileRoot'] . DIRECTORY_SEPARATOR . md5($fileName).'_new'.$ext;
+            $fullFileName = $this->config['fileRoot'] == '\\'
+                ? $this->config['fileRoot'] . DIRECTORY_SEPARATOR . md5($fileName).'_new'.$ext
+                : md5($fileName).'_new'.$ext;
         }
 
         /**

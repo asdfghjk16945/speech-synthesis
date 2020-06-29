@@ -7,7 +7,6 @@ namespace SpeechSynthesis;
 use SpeechSynthesis\Contracts\AudioSynthesisStrategy;
 use SpeechSynthesis\Products\Config;
 use SpeechSynthesis\Products\Iflytek;
-use traits\think\Instance;
 
 class SynthesisFactory
 {
@@ -20,7 +19,8 @@ class SynthesisFactory
             $configClass = Config::getInstance();
             $configClass->setConfig($config);
         }
-        $synthesisClass = new Iflytek();
+        $synthesisType = 'SpeechSynthesis\Products\\' . $synthesisType;
+        $synthesisClass = new $synthesisType();
         $synthesisRes = [];
         if($synthesisClass instanceof AudioSynthesisStrategy){
             $synthesisRes = (new Iflytek())->textToAudio($filename);
