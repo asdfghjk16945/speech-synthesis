@@ -88,7 +88,7 @@ class Iflytek implements AudioSynthesisStrategy
 
                 // 不成功会返回错误   code为0是成功
                 if ($response['code']) {
-                    return ['code' => 0, 'msg' => $response, 'data'=>['audio_name'=>'']];
+                    return ['code' => 0, 'msg' => $response['code'].'_'.$response['message'], 'data'=>['audio_name'=>'']];
                 }
                 //返回的音频需要进行base64解码
                 $audio = base64_decode($response['data']['audio']);
