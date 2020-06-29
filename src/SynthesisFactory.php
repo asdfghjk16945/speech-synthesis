@@ -23,7 +23,7 @@ class SynthesisFactory
         $synthesisClass = new $synthesisType();
         $synthesisRes = [];
         if($synthesisClass instanceof AudioSynthesisStrategy){
-            $synthesisRes = (new Iflytek())->textToAudio($filename);
+            $synthesisRes = $synthesisClass->textToAudio($filename);
         }
 
         $this->synthesisRes = $synthesisRes;
