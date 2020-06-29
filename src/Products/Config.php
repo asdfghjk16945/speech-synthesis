@@ -71,7 +71,6 @@ class Config
      */
     public function setConfig(array $config)
     {
-
-        self::$config = array_merge($config, self::$config);
+        self::$config = array_replace_recursive(self::$config, $config);
     }
 }
