@@ -56,11 +56,13 @@ class Iflytek implements AudioSynthesisStrategy
         $fileName = $fileName . $ext;
 
         // 完整文件地址
-        $fullFileName = $this->config['fileRoot'] . DIRECTORY_SEPARATOR . $fileName;
+        $fullFileName = $this->config['fileRoot'] != '/' ? $this->config['fileRoot'] . DIRECTORY_SEPARATOR . $fileName : $fileName;
 
         // 文件冲突，重新命名一下，后缀加_new
         if(file_exists($fullFileName)){
-            $fullFileName = $this->config['fileRoot'] . DIRECTORY_SEPARATOR . md5($fileName).'_new'.$ext;
+            $fullFileName = $this->config['fileRoot'] != '/'
+                ? $this->config['fileRoot'] . DIRECTORY_SEPARATOR . md5($fileName).'_new'.$ext
+                : md5($fileName).'_new'.$ext;
         }
 
         /**

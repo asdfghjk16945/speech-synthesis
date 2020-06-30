@@ -20,12 +20,9 @@ class SynthesisFactory
         }
         $synthesisType = 'SpeechSynthesis\Products\\' . $synthesisType;
         $synthesisClass = new $synthesisType();
-        $synthesisRes = [];
         if($synthesisClass instanceof AudioSynthesisStrategy){
-            $synthesisRes = $synthesisClass->textToAudio($filename);
+            $this->synthesisRes = $synthesisClass->textToAudio($filename);
         }
-
-        $this->synthesisRes = $synthesisRes;
     }
 
     /**
