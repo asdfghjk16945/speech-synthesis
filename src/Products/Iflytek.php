@@ -17,8 +17,6 @@ class Iflytek implements AudioSynthesisStrategy
 
     /**
      * Iflytek constructor.
-     * @param array $config
-     * @throws \Exception
      */
     public function __construct()
     {
@@ -112,7 +110,8 @@ class Iflytek implements AudioSynthesisStrategy
     }
 
     /**
-     * 创建参数
+     * 创建请求参数
+     * @return array|array[]
      */
     private function createMsg():array
     {
