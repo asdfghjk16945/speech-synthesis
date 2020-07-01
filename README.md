@@ -11,9 +11,9 @@ composer require speech-synthesis/speech-synthesis
 $config = [
     'Iflytek'=>[ 
         'fileRoot'=>'/uploads',// 文件保存的路径
-        'app_id' => '5e840bb8',
-        'api_secret'=>'0b0f729b9e5302ba69f5b91aba91948f',
-        'api_key'=>'09536ff9b5aeb8a4ccb51121b7844092',
+        'app_id' => '****',
+        'api_secret'=>'****',
+        'api_key'=>'****',
     ]
 ];
 $syn = new SynthesisFactory('Iflytek','此处是文件名',$config);
@@ -68,14 +68,14 @@ try {
     print_r($exception->getErrorMessage());
 }
 ```
-合成
+2、合成
 ```$xslt
 $config = [
     'Iflytek'=>[
         'fileRoot'=>'/',
-        "app_id"=>"5e840bb8",
-        "api_secret"=>"0b0f729b9e5302ba69f5b91aba91948f",
-        "api_key"=>"09536ff9b5aeb8a4ccb51121b7844092",
+        "app_id"=>"****",
+        "api_secret"=>"****",
+        "api_key"=>"****",
     ],
     'Ali'=>[
         'fileRoot'=>'/',
@@ -92,5 +92,34 @@ if($msg){
     $speechFile = $syn->getSpeechFile();// 文件
 }
 ```
-
+腾讯云使用示例：
+```$xslt
+$config = [
+    'Iflytek'=>[
+        'fileRoot'=>'/',
+        "app_id"=>"***",
+        "api_secret"=>"***",
+        "api_key"=>"***",
+    ],
+    'Ali'=>[
+        'fileRoot'=>'/',
+        'appkey'=>'****',
+        'token'=>'****',
+        'format'=>'mp3',
+        'draftContent'=>'对于一个在北平住惯的人，像我，冬天要是不刮风，。'
+//        ....
+    ],
+    'Tencent'=>[
+        'fileRoot'=>'/',
+        'AppId'=>000,
+        'SecretId'=>'***',
+        'SecretKey'=>'***'
+    ]
+];
+$syn = new SynthesisFactory('Tencent','Tencent',$config);
+$msg = $syn->getErrorMsg();// 错误信息
+if($msg){
+    $speechFile = $syn->getSpeechFile();// 文件
+}
+```
 
