@@ -116,7 +116,7 @@ class Ali implements AudioSynthesisStrategy
      * 设置请求参数
      * @return array
      */
-    public function createMsg()
+    private function createMsg():array
     {
         return [
             'appkey'=>$this->config['appkey'],

@@ -29,6 +29,26 @@ class Config
      * @var array
      */
     protected static $config = [
+        // 腾讯云默认配置
+        'Tencent'=>[
+            'fileRoot'=>'',
+            'Action'=>'TextToStreamAudio',
+            'AppId'=>00000000,
+            'Codec'=>'pcm',
+            'Expired'=>3600, //表示为离线识别
+            'ModelType'=>1,
+            'PrimaryLanguage'=>1,
+            'ProjectId'=>0,
+            'SampleRate'=>16000,
+            'SecretId'=>'Your SecretId',
+            'SecretKey'=>'Your SecretKey',
+            'SessionId'=>'1234',
+            'Speed'=>0,
+            'draftContent'=>'对于一个在北平住惯的人，像我，',
+            'VoiceType'=>0,
+            'Volume'=>5,
+            'url'=>'https://tts.cloud.tencent.com/stream'
+        ],
         // 阿里云默认配置
         'Ali'=>[
             'fileRoot'=>'',

@@ -22,7 +22,9 @@ class Iflytek implements AudioSynthesisStrategy
     public function __construct(array $config)
     {
         $this->config = $config;
-        $this->config['time'] = date('D, d M Y H:i:s', strtotime('-8 hours')) . ' GMT';
+        $this->config['time'] = $this->config['time']
+            ? $this->config['time']
+            : date('D, d M Y H:i:s', strtotime('-8 hours')) . ' GMT';
     }
 
     /**
