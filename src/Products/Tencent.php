@@ -127,7 +127,7 @@ class Tencent implements AudioSynthesisStrategy
 
         $rsp_str = curl_exec($ch);
         if ($rsp_str === false) {
-            var_dump(curl_error($ch));
+//            var_dump(curl_error($ch));
             curl_close($ch);
             return -2;
         }
