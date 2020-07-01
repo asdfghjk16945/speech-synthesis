@@ -88,7 +88,7 @@ $config = [
 ];
 $syn = new SynthesisFactory('Ali','测试的名字',$config);
 $msg = $syn->getErrorMsg();// 错误信息
-if($msg){
+if(!$msg){
     $speechFile = $syn->getSpeechFile();// 文件
 }
 ```
@@ -118,7 +118,7 @@ $config = [
 ];
 $syn = new SynthesisFactory('Tencent','Tencent',$config);
 $msg = $syn->getErrorMsg();// 错误信息
-if($msg){
+if(!$msg){
     $speechFile = $syn->getSpeechFile();// 文件
 }
 ```
