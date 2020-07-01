@@ -13,15 +13,18 @@ class SynthesisFactory
 
     public function __construct($synthesisType,$filename, $config = [])
     {
+        $configClass = Config::getInstance();
         // 增加配置
         if($config){
-            $configClass = Config::getInstance();
             $configClass->setConfig($config);
         }
-        $synthesisType = 'SpeechSynthesis\Products\\' . $synthesisType;
-        $synthesisClass = new $synthesisType();
-        if($synthesisClass instanceof AudioSynthesisStrategy){
-            $this->synthesisRes = $synthesisClass->textToAudio($filename);
+        $config = $configClass->getConfig($synthesisType);
+        if($config){
+            $synthesisTypes = 'SpeechSynthesis\Products\\' . $synthesisType;
+            $synthesisClass = new $synthesisTypes($config);
+            if($synthesisClass instanceof AudioSynthesisStrategy){
+                $this->synthesisRes = $synthesisClass->textToAudio($filename);
+            }
         }
     }
 

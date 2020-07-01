@@ -6,11 +6,16 @@ namespace SpeechSynthesis\Products;
 
 class Config
 {
-    static private $instance;
-    public function __construct()
+    private static $instance;
+    private function __construct()
     {
 
     }
+    private function __clone()
+    {
+        // TODO: Implement __clone() method.
+    }
+
     public static function getInstance()
     {
         //判断$instance是否是Singleton的对象，不是则创建
@@ -24,15 +29,32 @@ class Config
      * @var array
      */
     protected static $config = [
+        // 阿里云默认配置
+        'Ali'=>[
+            'fileRoot'=>'',
+            'appkey'=>'',
+            'token'=>'',
+            'format'=>'mp3',
+            'sample_rate'=>16000,
+            'voice'=>'xiaoyun',
+            'volume'=>50,
+            'speech_rate'=>0,
+            'pitch_rate'=>0,
+            'draftContent'=>'对于一个在北平住惯的人，像我',
+            'X-NLS-Token'=>'',
+            'url'=>'https://nls-gateway.cn-shanghai.aliyuncs.com/stream/v1/tts',
+            'longText'=>false
+        ],
+        // 科大讯飞默认配置
         'Iflytek'=>[
             'fileRoot'=>'',
             'url'=>'wss://tts-api.xfyun.cn/v2/tts',
             'algorithm'=>'hmac-sha256',
             'time'=>'',
 
-            'app_id' => '***',
-            'api_secret'=>'***',
-            'api_key'=>'***',
+            'app_id' => '',
+            'api_secret'=>'',
+            'api_key'=>'',
             'aue' => 'lame',
             'sfl' => 1,
             'auf' => 'audio/L16;rate=16000',

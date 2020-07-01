@@ -17,16 +17,11 @@ class Iflytek implements AudioSynthesisStrategy
 
     /**
      * Iflytek constructor.
+     * @param $config
      */
-    public function __construct()
+    public function __construct(array $config)
     {
-        $key = __CLASS__;
-        $len = strripos($key,'\\');
-        if( $len !== false){
-            $key = substr('peechSynthesis\Products\Iflytek', $len);
-        }
-        $configClass = Config::getInstance();
-        $this->config = $configClass->getConfig($key);
+        $this->config = $config;
         $this->config['time'] = date('D, d M Y H:i:s', strtotime('-8 hours')) . ' GMT';
     }
 
